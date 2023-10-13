@@ -16,5 +16,4 @@ public class _11720_숫자의_합_구하기_Scanner_pratice {
         }
         System.out.println(sum);
     }
-    }
 }
