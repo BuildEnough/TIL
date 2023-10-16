@@ -1,13 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        String str = "cat";
-        String result = "";
-        for(int i=0; i<str.length(); i++) {
-            result += str.charAt(i);
-            for(int j=0; j<i+1; j++) {
-                result += str.charAt(j);
-            }
+        String str = "I love codestates";
+        String[] result = new String[str.length()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] += str.split(" ");
         }
-        System.out.println(result);
+        for (int i = 0; i < result.length; i++) {
+            System.out.println(result[i]);
+
+        }
     }
 }
