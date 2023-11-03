@@ -25,6 +25,7 @@ public class PrototypeTest {
         ac.close();
     }
 
+
     @Scope("prototype")
     static class PrototypeBean {
         @PostConstruct
