@@ -55,3 +55,52 @@
 
 // obj[key] = 'value';
 // console.log(obj[key]);
+
+
+// var x = 2, result;
+
+// if(x % 2) result = '홀수';
+// else result = '짝수';
+
+// console.log(result);    
+
+
+// var x = 10;
+// var str = x.toString();
+// console.log(typeof str, str);
+
+
+// console.log(typeof(-Infinity));
+
+
+// if('') console.log('1');
+// if(1) console.log('2');
+// if(0) console.log('3');
+// if('st') console.log('4');
+// if(null) console.log('5');
+
+
+// var done = true;
+// var message = '';
+
+// if(done) message = '완료';
+
+// message = done && '완료';
+// console.log(message);
+
+
+// var done = false;
+// var message = '';
+
+// if(!done) message = '미완료';
+
+// message = done || '미완료';
+// console.log(message);
+
+
+// var elem = null;
+// // var value1 = elem.value;
+
+// var value= elem && elem.value;
+
+
