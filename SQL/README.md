@@ -230,3 +230,56 @@ SELECT select_expr
 
 ### DATE_FORMAT()
 - 전달받은 형식에 맞춰 날짜와 시간 정보를 문자열로 반환
+
+---
+
+<br>
+<br>
+<br>
+
+# SQL 고급
+
+### CREATE TABLE AS SELECT
+- city 테이블과 똑같은 city2 테이블 생성
+```sql
+SELECT TABLE city2 AS SELECT * FROM city;
+```
+
+### CREATE DATABASE
+- CREATE DATABASE문은 새로운 데이터베이스를 생성
+- USE문으로 새 데이터베이스를 사용
+
+### CREATE TABLE
+- 테이블 생성
+
+### ALTER TABLE
+- ALTER TABLE 문과 함께 ADD 문을 사용하면, 테이블 컬럼을 추가할 수 있음
+- ALTER TABLE 문과 함께 MODIFY 문을 사용하면, 테이블의 컬럼 타입을 변경할 수 있음
+- ALTER TABLE 문과 함께 DROP 문을 사용하면, 테이블에 컬럼을 제거할 수 있음
+
+
+### 인덱스
+- 테이블에서 원하는 데이터를 빠르게 찾기 위해 사용
+- 일반적으로 데이터를 검색할 때 순서대로 테이블 전체를 검색하므로 데이터가 많으면 많을수록 탐색하는 시간이 늘어남
+- 검색과 질의를 할 때 테이블 전체를 읽지 않기 때문에 빠름
+- 설정된 컬럼 값을 포함한 데이터의 삽입, 삭제, 수정 작업이 원본 테이블에서 이루어질 경우, 인덱스도 함께 수정되어야 함
+- 인덱스가 있는 테이블은 처리 속도가 느려질 수 있으므로 수정보다는 검색이 자주 사용되는 테이블에서 사용하는 것이 좋음
+
+### CREATE INDEX
+- CREATE INDEX문을 사용하여 인덱스를 생성
+
+### SHOW INDEX
+- 인덱스 정보 보기
+
+### CREATE UNIQUE INDEX
+- 중복 값을 허용하지 않는 인덱스
+
+### FULLTEXT INDEX
+- FULLTEXT INDEX는 일반적인 인덱스와는 달리 매우 빠르게 테이블의 모든 텍스트 컬럼을 검색
+
+### INDEX 삭제(ALTER)
+- ALTER 문을 사용하여 테이블에 추가된 인덱스 삭제
+
+### INDEX 삭제(DROP INDEX)
+- DROP 문을 사용하여 해당 테이블에서 명시된 인덱스를 삭제
+- DROP 문은 내부적으로 ALTER 문으로 자동변환되어 명시된 이름의 인덱스를 삭제
