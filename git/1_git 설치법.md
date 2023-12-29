@@ -36,6 +36,8 @@ git config --global user.name "홍길동"
 ```
 - 컴퓨터에서 git을 처음 사용하면 위의 코드를 입력, 누가 git을 사용하고 있는지에 대한 아이디 등록같은 것
 
+<br>
+
 # 4. 그 외
 - `git config --list`: config 리스트 보기
 - git config 삭제
