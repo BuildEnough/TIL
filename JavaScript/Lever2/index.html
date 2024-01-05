@@ -58,7 +58,7 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <span class="navbar-brand">Navbar</span>
+          <span class="navbar-brand">JSShop</span>
           <span class="badge bg-dark">Dark 🔄</span>
           <button  class="navbar-toggler" type="button">
             <span class="navbar-toggler-icon"></span>
@@ -94,9 +94,60 @@
       <button id="login" class="btn btn-danger">로그인</button>
     </div>
 
+    <div style="height: 1000px;"></div>
+
     <div class="alert alert-danger">
       <span id="num">5</span>초 이내 구매 시 사은품 증정!
     </div>
+    
+    <div style="overflow: hidden;">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img src="car1.png">
+        </div>
+        <div class="slide-box">
+          <img src="car2.png">
+        </div>
+        <div class="slide-box">
+          <img src="car3.png">
+        </div>
+      </div>
+    </div>
+
+    <button class="before">이전</button>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="next">다음</button>
+
+    <script>
+
+      var slide = 1;
+
+      $('.before').on('click', function() {
+        if (slide == `${slide}`) {
+          $('.slide-container').css('transform', `translateX(-${slide}00vw)`);
+          slide--;
+        }
+      });
+
+      $('.next').on('click', function() {
+        if (slide == `${slide}`) {
+          $('.slide-container').css('transform', `translateX(-${slide}00vw)`);
+          slide++;
+        }
+      });
+      
+      $('.slide-1').on('click', function() {
+        $('.slide-container').css('transform', 'translateX(0vw)');
+      });
+      $('.slide-2').on('click', function() {
+        $('.slide-container').css('transform', 'translateX(-100vw)');
+      });
+      $('.slide-3').on('click', function() {
+        $('.slide-container').css('transform', 'translateX(-200vw)');
+      });
+    </script>
 
     <script>
 
