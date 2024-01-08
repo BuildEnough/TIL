@@ -130,10 +130,127 @@ array는 순서가 있기 때문에 순서개념이 필요한 것들을 할 수 
     </div>
 </div>
 
-<script>
+<script>``
     var car2 = {name :'소나타', price: 50000}
 
     document.getElementById('item').innerHTML = car2['name'];
     document.getElementById('price').innerHTML = car2['price'];
 </script>
+```
+
+<br>
+
+### 정리
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello, world</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <div class="container mt-3">
+      <div class="card p-3">
+        <span id="item">상품명</span>
+        <span id="price">가격</span>
+      </div>
+    </div>
+
+    <script>
+      
+      var car = ['소나타', 50000, 'white'];
+      var car2 = {name :'소나타', price: 50000}
+
+      document.getElementById('item').innerHTML = car2['name'];
+      document.getElementById('price').innerHTML = car2['price'];
+    
+
+    </script>
+
+    <style>
+        ul.list {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          border-bottom: 1px solid #ccc;
+        }
+        ul.list::after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+        .tab-button {
+          display: block;
+          padding: 10px 20px 10px 20px;
+          float: left;
+          margin-right: -1px;
+          margin-bottom: -1px;
+          color: grey;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .orange {
+          border-top: 2px solid orange;
+          border-right: 1px solid #ccc;
+          border-bottom: 1px solid white;
+          border-left: 1px solid #ccc;
+          color: black;
+          margin-top: -2px;
+        }
+        .tab-content {
+          display: none;
+          padding: 10px;
+        }
+        .show {
+          display: block;
+        }
+      </style>
+      
+      <div class="container mt-5">
+        <ul class="list">
+          <li class="tab-button" data-id="0">Products</li>
+          <li class="tab-button orange" data-id="1">Information</li>
+          <li class="tab-button" data-id="2">Shipping</li>
+        </ul>
+        <div class="tab-content">
+          <p>상품설명입니다. Product</p>
+        </div>
+        <div class="tab-content show">
+          <p>스펙설명입니다. Information</p>
+        </div>
+        <div class="tab-content">
+          <p>배송정보입니다. Shipping</p>
+        </div>
+      </div>
+
+      
+    <script src="tab.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
+```
+
+<br>
+
+```js
+$('.list').click(function(e) {
+
+  탭열기(e.target.dataset.id)
+
+});
+
+
+
+function 탭열기(num) {
+  $('.tab-button').removeClass('orange');
+  $('.tab-button').eq(num).addClass('orange');
+  $('.tab-content').removeClass('show');
+  $('.tab-content').eq(num).addClass('show');
+}
 ```
