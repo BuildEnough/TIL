@@ -1,3 +1,82 @@
+# select 폼 생성
+`detail.html`에 생성
+```html
+<form class="container my-5 form-group">
+    <p>상품선택</p>
+    <select class="form-select mt-2">
+      <option>모자</option>
+      <option>셔츠</option>
+    </select>
+</form>
+```
+- `<select>`는 `<input>`랑 같은데,  
+사용자가 고를 수 있는 선택지를 드랍다운 메뉴로 제공하는 `<input>`이다
+    - 선택지는 `<option>`으로 하면 됨
+- `<select>`태그도 선택 시 `input`, `change` 이벤트가 발생함
+- `<select>` 태그도 `.value` 유저가 입력한 값을 가져올 수 있다
+
+<br>
+
+# 셔츠 선택 시 `<select>` 더보여주기
+유저가 셔츠를 선택하면 하단에 `95`, `100`을 선택할 수 있는 `<select>`박스가 등장하려면 코드를 어떻게 만들어야 할까
+```html
+<form class="container my-5 form-group">
+    <p>상품선택</p>
+    <select class="form-select mt-2">
+      <option>모자</option>
+      <option>셔츠</option>
+    </select>
+    <select class="form-select mt-2 form-hide">
+      <option>95</option>
+      <option>100</option>
+    </select>
+</form>
+```
+
+<br>
+
+```css
+.form-hide {
+    display: none;
+}
+```
+
+<br>
+
+```html
+<script>
+  var value = $('.form-select').eq(0).val();
+  if (value == '셔츠') {
+    $('.form-select').eq(1).removeClass('form-hide');
+  }
+</script>
+```
+- 유저가 `<select>`에서 어떤 것을 선택했는지 확인하는 방법
+    - `<input>`과 똑같이 `.value`를 사용하면 됨
+- 여기까지하면 작동 안됨
+    - `<script> 안에 있는 코드는 페이지 로드 시 1회만 실행되기 때문`
+
+따라서
+
+```html
+<script>
+  $('.form-select').eq(0).on('input', function(){
+
+    var value = $('.form-select').eq(0).val();
+    if (value == '셔츠') {
+      $('.form-select').eq(1).removeClass('form-hide');
+    }
+
+  });
+</script>
+```
+- `<input>`이나 `<select>` 조작할 때 input 이벤트가 발생하기 때문에 `이벤트리스너`를 부착하면 됨
+
+<br>
+
+# 정리
+
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +102,6 @@
       <select class="form-select mt-2">
         <option>모자</option>
         <option>셔츠</option>
-        <option>바지</option>
       </select>
 
       <select class="form-select mt-2 form-hide">
@@ -32,34 +110,11 @@
       </select>
     </form>
 
-    <div id="test">
-      <h4>반갑당</h4>
-    </div>
-
     <script>
-
-      var 템플릿 = '<p>안녕</p>';
-      document.querySelector('#test').insertAdjacentHTML('beforeend', 템플릿);
-      $('#test').append(템플릿);
-
-    </script>
-
-    <script>
-
-      var pants = [28, 30, 32, 34];
-      var shirts = [95, 100, 105];
-      
       $('.form-select').eq(0).on('input', function(e) {
         var value = e.currentTarget.value;
         if (value == '셔츠'){
           $('.form-select').eq(1).removeClass('form-hide');
-        } else if (value == '바지') {
-          $('.form-select').eq(1).removeClass('form-hide');
-          $('.form-select').eq(1).html('');
-
-          pants.forEach(function(a, i){
-            $('.form-select').eq(1).append(`<option>${a}</option>`);
-          });
         }
 
         if (value == '모자'){
@@ -67,11 +122,7 @@
         }
       })
 
-      var obj = {name:'kim', age:20};
 
-      for (var key in obj){
-        console.log(key);
-      }
 
     </script>
 
@@ -148,3 +199,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
+```
+
+<br>
+
+```css
+.form-hide {
+    display: none;
+}
+```
