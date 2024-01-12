@@ -103,7 +103,16 @@
 
         $('.buy').click(function(e) {
           var title = $(e.target).siblings('h5').text();
-          localStorage.setItem('cart', JSON.stringify([title]))
+
+          if(localStorage.getItem('cart') != null) {
+            var 꺼낸거 = JSON.parse(localStorage.cart);
+            꺼낸거.push(title);
+            localStorage.setItem('cart', JSON.stringify(꺼낸거));
+
+          } else {
+            localStorage.setItem('cart', JSON.stringify([title]));
+          }
+
         });
 
         
