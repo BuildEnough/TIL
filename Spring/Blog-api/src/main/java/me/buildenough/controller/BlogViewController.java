@@ -1,7 +1,9 @@
 package me.buildenough.controller;
 
 import lombok.RequiredArgsConstructor;
+import me.buildenough.domain.Article;
 import me.buildenough.dto.ArticleListViewResponse;
+import me.buildenough.dto.ArticleViewResponse;
 import me.buildenough.service.BlogService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,4 +28,13 @@ public class BlogViewController {
 
         return "articleList";
     }
+
+    @GetMapping("/articles/{id}")
+    public String getArticle(@PathVariable Long id, Model model) {
+        Article article = blogService.findById(id);
+        model.addAttribute("article", new ArticleViewResponse(article));
+
+        return "article";
+    }
+
 }
