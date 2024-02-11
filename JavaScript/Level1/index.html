@@ -8,7 +8,7 @@
     
     <div class="alert-box" id="alert">
         <p id="title">알림창임</p>
-        <button onclick="알림창열기('none')">닫기</button>
+        <button id="close">닫기</button>
     </div>
     
     <button onclick="아이디비밀번호알림창('아이디를 입력해주세요')">버튼1</button>
@@ -16,7 +16,9 @@
     
     <script>
 
-        
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+        });
 
         function 알림창열기(구멍){
             document.getElementById('alert').style.display = 구멍;
