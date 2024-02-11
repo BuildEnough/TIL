@@ -29,15 +29,15 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .authorizeRequests()
+                .authorizeRequests() // 인증 인가
                 .requestMatchers("/login", "/signup", "/user").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
+                .formLogin() // 폼 기반 로그인 설
                 .loginPage("/login")
                 .defaultSuccessUrl("/articles")
                 .and()
-                .logout()
+                .logout() // 로그아웃 설
                 .logoutSuccessUrl("/login")
                 .invalidateHttpSession(true)
                 .and()
@@ -45,6 +45,7 @@ public class WebSecurityConfig {
                 .build();
     }
 
+    // 인증 관리자 설정
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http, BCryptPasswordEncoder bCryptPasswordEncoder, UserDetailService userDetailService) throws Exception {
         return http.getSharedObject(AuthenticationManagerBuilder.class)
@@ -54,6 +55,7 @@ public class WebSecurityConfig {
                 .build();
     }
 
+    // 패스워드 인코더로 사용할 빈 등록
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
