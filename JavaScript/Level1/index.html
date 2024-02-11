@@ -7,17 +7,29 @@
 <body>
     
     <div class="alert-box" id="alert">
-        알림창임
-        <button onclick="alert('none')">닫기</button>
+        <p id="title">알림창임</p>
+        <button onclick="알림창열기('none')">닫기</button>
     </div>
-    <button onclick="alert('block')">버튼</button>
+    
+    <button onclick="아이디비밀번호알림창('아이디를 입력해주세요')">버튼1</button>
+    <button onclick="아이디비밀번호알림창('비밀번호를 입력해주세요')">버튼2</button>
     
     <script>
-        function alert(param){
-            document.getElementById('alert').style.display = param;
-        }
 
         
+
+        function 알림창열기(구멍){
+            document.getElementById('alert').style.display = 구멍;
+        }
+
+        function 아이디비밀번호알림창(param) {
+            // 1. p태그 내용바꾸기
+            document.getElementById('title').innerHTML = param;
+            // 2. 띄우기
+            document.getElementById('alert').style.display = 'block';
+        }
+
+
     </script>
 
 </body>
