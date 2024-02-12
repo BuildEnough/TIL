@@ -16,23 +16,66 @@
     
     <script>
 
-        document.getElementById('close').addEventListener('click', function(){
-            document.getElementById('alert').style.display = 'none';
+        document.querySelector('#close').addEventListener('click', function(){
+            document.querySelector('#alert').style.display = 'none';
         });
 
         function 알림창열기(구멍){
-            document.getElementById('alert').style.display = 구멍;
+            document.querySelector('#alert').style.display = 구멍;
         }
 
         function 아이디비밀번호알림창(param) {
             // 1. p태그 내용바꾸기
-            document.getElementById('title').innerHTML = param;
+            document.querySelector('#title').innerHTML = param;
             // 2. 띄우기
-            document.getElementById('alert').style.display = 'block';
+            document.querySelector('#alert').style.display = 'block';
         }
 
 
     </script>
 
 </body>
+</html>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand">Navbar</span>
+          <button  class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+    </nav> 
+
+    <ul class="list-group" id="test1">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+    <script>
+
+        document.querySelector('.navbar-toggler').addEventListener('click', function() {
+            document.querySelector('.list-group').classList.toggle('show');
+        });
+
+        // document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function() {
+        //     document.getElementsByClassName('list-group')[0].classList.toggle('show');
+        // });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
 </html>
