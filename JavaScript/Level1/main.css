@@ -1,7 +1,35 @@
 .alert-box {
-    background-color: skyblue;
-    padding: 20px;
-    color: white;
-    border-radius: 5px;
-    display: none;
+  background-color: skyblue;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  display: none;
+}
+
+.list-group {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.black-bg {
+  width : 100%;
+  height : 100%;
+  position : fixed;
+  background : rgba(0,0,0,0.5);
+  z-index : 5;
+  padding: 30px;
+  display: none;
+  }
+
+.white-bg {
+  background: white;
+  border-radius: 5px;
+  padding: 30px;
+} 
+
+.show-modal {
+  display: block;
 }

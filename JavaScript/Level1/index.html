@@ -1,42 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    
-    <div class="alert-box" id="alert">
-        <p id="title">알림창임</p>
-        <button id="close">닫기</button>
-    </div>
-    
-    <button onclick="아이디비밀번호알림창('아이디를 입력해주세요')">버튼1</button>
-    <button onclick="아이디비밀번호알림창('비밀번호를 입력해주세요')">버튼2</button>
-    
-    <script>
-
-        document.querySelector('#close').addEventListener('click', function(){
-            document.querySelector('#alert').style.display = 'none';
-        });
-
-        function 알림창열기(구멍){
-            document.querySelector('#alert').style.display = 구멍;
-        }
-
-        function 아이디비밀번호알림창(param) {
-            // 1. p태그 내용바꾸기
-            document.querySelector('#title').innerHTML = param;
-            // 2. 띄우기
-            document.querySelector('#alert').style.display = 'block';
-        }
-
-
-    </script>
-
-</body>
-</html>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -49,6 +10,13 @@
   </head>
   <body>
 
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <button class="btn btn-danger" id="close">닫기</button>
+      </div>
+    </div>
+
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <span class="navbar-brand">Navbar</span>
@@ -58,7 +26,7 @@
         </div>
     </nav> 
 
-    <ul class="list-group" id="test1">
+    <ul class="list-group">
         <li class="list-group-item">An item</li>
         <li class="list-group-item">A second item</li>
         <li class="list-group-item">A third item</li>
@@ -66,26 +34,22 @@
         <li class="list-group-item">And a fifth one</li>
     </ul>
 
-    <p class="hello">안녕</p>
-    <p class="hello">안녕</p>
-    <p class="hello">안녕</p>
-    <button id="test-btn">버튼</button>
+    <button id="login">로그인</button>
 
     <script>
 
+      // 로그인 버튼 누르면 modal 창 띄우기
+      $('#login').on('click', function() {
+        $('.black-bg').addClass('show-modal');
+      });
 
-        $('#test-btn').on('click', function(){
-            $('.hello').fadeOut();
-        })
+      $('.btn').on('click', function() {
+        $('.black-bg').removeClass('show-modal');
+      })
 
-        document.querySelector('.navbar-toggler').addEventListener('click', function() {
-            document.querySelector('.list-group').classList.toggle('show');
-        });
-
-        // document.querySelector('.hello').innerHTML = '바보';
-        $('.hello').html('바보');
-        $('.hello').css('color', 'red');
-        $('.hello').addClass('show')
+      document.querySelector('.navbar-toggler').addEventListener('click', function() {
+          document.querySelectorAll('.list-group')[0].classList.toggle('show');
+      });
 
     </script>
 
