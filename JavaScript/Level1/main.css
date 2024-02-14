@@ -36,3 +36,12 @@
   visibility: visible;
   opacity: 1;
 }
+
+.unShow-modal {
+  display: none;
+}
+
+.main-bg {
+  padding: 100px 20px;
+  background: lightgray;
+}
