@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/IntelliJ.iml" filepath="$PROJECT_DIR$/.idea/IntelliJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OCAJP/OCAJP.iml" filepath="$PROJECT_DIR$/OCAJP/OCAJP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice/practice.iml" filepath="$PROJECT_DIR$/practice/practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OCAJP/test1/test1.iml" filepath="$PROJECT_DIR$/OCAJP/test1/test1.iml" />
     </modules>
   </component>
 </project>
