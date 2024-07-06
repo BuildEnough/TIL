@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수식</title>
+</head>
+<body>
+<script>
+var first = 5;
+var last = 7;
+// 함수식 시작하기
+var all = (function(a,b){
+  var result;
+  a>b ? result = 'a가크다' : result = 'b가크다';
+  return result;
+})(first,last)
+// 출력하기
+console.log(all);
+</script>
+
+</body>
+</html>

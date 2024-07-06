@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 표현식</title>
+
+</head>
+  <body>
+    <script>
+      const num = {
+        'brand name' : 'MyBrand', 
+        level : 2,
+        'born-year' : 2022, 
+        isVeryNice : true,
+        '1stName' : 'javascript', 
+        bestCourse : {
+          title : '프론트엔드', 
+          laguage : 'javascript', 
+          'level num' : 1
+        },
+        name:[1,2,3,4,5] 
+      }
+      console.log(num.level)
+      // 출력: 2
+      console.log(num['brand name']) // 출력: MyBrand
+      console.log(num['1stName']) // 출력: javascript
+      console.log(num['born'+ '-'+'year'])              // 출력: 2022
+      console.log(num.bestCourse.title) // 출력: 프론트엔드
+      console.log(num.bestCourse['level num'])    // 출력: 1
+      // 출력: 3
+      console.log(num.name[2])
+    </script>
+  </body>
+</html>

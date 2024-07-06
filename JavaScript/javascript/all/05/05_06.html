@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역변수</title>
+    <body>
+<script>
+ var num = 1;
+  //함수선언
+  function love(){
+      str ='산';    //전역변수
+      var sum ='강'; //지역변수
+      document.write('함수내에서 출력 ', str,'<br>');
+      document.write('함수내에서 출력 ', sum,'<br>');
+      return str;
+  }
+  love();
+  document.write(str,'<br>');
+</script>
+</body>
+</html>

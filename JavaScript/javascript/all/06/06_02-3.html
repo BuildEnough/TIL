@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>배열</title>
+  </head>
+  <body>
+<script>
+  let num = [1,2,3,4,5,6,7,8,9]
+  let two = num.filter(function(item,index){ 
+  return index % 2 === 0
+  })
+  console.log(two)
+  two.forEach(function(item){
+  document.write(item,'입니다.<br>') 
+  })
+</script>
+  </body>
+</html>

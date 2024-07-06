@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DOM</title>
+    <style media="screen">
+      .cta {
+          padding: 3em;
+          background: #B51C35;
+          text-align: center;
+      }
+
+      .cta>a {
+          padding: 0 .5em;
+          font-size: 2em;
+          font-weight: 900;
+          color: #FFFCED;
+          text-decoration: none;
+          border: 5px solid #FFFCED;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="cta">
+    <a href="#" target="_blank">DOM TEST</a>
+  </div>
+<script>
+  var CTA = document.querySelector('.cta>a');
+  //console.log(CTA.style);
+  //CTA.style.color = 'green';
+  //CTA.style.backgroundColor = 'yellow';
+  CTA.style.cssText = 'padding:1em;color:green;background-color:yellow';
+</script>
+  </body>
+</html>

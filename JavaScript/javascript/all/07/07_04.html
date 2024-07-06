@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math객체</title>
+</head>
+<body>
+  <script>
+let toDate1 = new Date('2022-4-19 12:00:00')
+let toDate2 = new Date('2022-4-19 14:10:20')
+let toDiff = toDate2 - toDate1
+  console.log(toDiff)  
+  console.log(toDiff / 1000) 
+  console.log(toDiff /(1000 * 60)) 
+  console.log(toDiff /(1000 * 60 * 60)) 
+  console.log(toDiff / (1000 * 60 * 60 *24)) 
+  document.write( 
+      `
+      ${Math.floor(toDiff % (1000 * 60 * 60 *24) /(1000* 60 * 60))} 시 
+      ${Math.floor(toDiff % (1000 * 60 * 60) /(1000* 60))} 분
+      ${Math.floor(toDiff % (1000 * 60) /(1000))} 초 
+      `)
+  </script>  
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머작동하기</title>
+    <style type="text/css">
+        #box {
+            position: absolute;
+            left: 0px;
+            top: 200px;
+            width: 50px;
+            height: 50px;
+            z-index: 1;
+            background-color: #0066FF;
+        }
+
+        button {
+            width: 150px;
+            margin: 0 15px;
+            font: bold 25px/50px Arial, sans-serif;
+            color: #fff;
+            background-color: rgb(255, 60, 0);
+            text-align: center;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="play">play</button>
+    <button type="button" id="stop">stop</button>
+    
+    <div id="box"></div>
+<script>
+const PLAY = document.querySelector('#play');
+const STOP = document.querySelector('#stop');
+var a=0;
+
+function move(){
+    a+=1; //a값을 1씩 증가
+    document.getElementById('box').style.left=a+"px";
+}
+function play(){
+  pMove = setInterval('move()',10) //10/1000초마다 타이머 작동
+}
+function stop(){
+  pStop = clearInterval(pMove); //pMove 타이머 정지
+}
+PLAY.addEventListener('click',play);
+STOP.addEventListener('click',stop);
+    </script>
+</body>
+
+</html>

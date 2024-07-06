@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//무작위:random
+var num = Math.random()
+document.write(num,'<br>');
+
+//0~최대의 숫자
+document.write(Math.random()*500,'<br>');
+
+//최소 ~최대의 숫자
+//Math.random()*(max-min)+min;
+document.write(Math.random()*(500-100)+100);
+
+document.write(Math.ceil(Math.random()*(500-100)+100));
+
+//최대:max 
+console.log(Math.max(23,56));
+console.log(Math.max(23,'56'));
+
+// 최소:min
+console.log(Math.min(23,56));
+console.log(Math.min('23','56'));
+</script>
+</body>
+</html>

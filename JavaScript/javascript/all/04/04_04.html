@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문 : switch문</title>
+</head>
+<body>
+    
+    <script>
+    var classRoom = prompt('학년을 입력하세요','1학년:1, 2학년:2,3학년:3,기타:4');
+
+        switch(classRoom){
+        case '1':{document.write('2층으로 가세요.');}
+            break;
+        case '2':{document.write('3층으로 가세요.');}
+            break;
+        case '3':{document.write('별관으로 가세요.');}
+            break;
+        default:{document.write('1층 안내실로 가세요.');}
+    }
+    </script>
+    
+
+</body>
+</html>

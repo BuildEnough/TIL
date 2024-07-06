@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+  </head>
+  <body>
+    <script>
+//1. 기본형
+var pen = new Array(4);
+pen[0] ="red";
+pen[1] ="green";
+pen[2] ="blue";
+pen[3] ="orange";
+
+console.log(pen);
+console.log(pen[2]);
+
+//2번
+var room = new Array();
+room = ['red','green','blue','orange'];
+console.log(room);
+
+//3번;
+var str = new Array('red','green','blue','orange');
+console.log(str);
+
+//배열변경
+str[2] = 'pink';
+console.log(str);
+
+var roomVar =str[1];
+console.log(roomVar);
+    </script>
+  </body>
+</html>

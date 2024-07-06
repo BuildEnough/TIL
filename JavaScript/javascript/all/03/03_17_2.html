@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리연산자</title>
+</head>
+<body>
+<script>
+// 저장된 id, 패스워드값 선언하기
+var ID = 'main';
+var PW = 'A0123';
+// 사용자 id, 패스워드값 선언하기
+var userId = prompt('아이디를 입력하세요');
+var userPw = prompt('패스워드를 입력하세요');
+
+//결과를 알아보기 위한 and논리식 만들기
+var result = (ID === userId) ||  (PW ===userPw) ;
+
+//결과 출력하기
+console.log('로그인결과는 : ' ,result);
+</script>
+</body>
+</html>

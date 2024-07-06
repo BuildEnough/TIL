@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이미지생성하기</title>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+var divDom =  document.querySelector('div');
+  
+  for(i=1 ; i<=6 ; i++){
+   var IMG = document.createElement('img');
+   IMG.setAttribute('src',`images/color_${i}.png`);
+   divDom.append(IMG);
+  }
+  
+</script>
+</body>
+</html>

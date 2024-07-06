@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DOM</title>
+    <style media="screen">
+      .cta {
+          padding: 3em;
+          background: #d2d434;
+          text-align: center;
+      }
+
+      .cta a {
+          padding: 0 .5em;
+          font-size: 2em;
+          font-weight: 900;
+          color: #615206;
+          text-decoration: none;
+          border: 5px solid #837325;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="cta">
+    <a href="#">DOM TEST</a>
+  </div>
+  <script>
+    const CTA = document.querySelector('.cta>a') ; 
+    //console.log(CTA.attributes);
+    if(CTA.hasAttribute('target')){
+      console.log(CTA.getAttribute('target'));
+    }else{
+      CTA.setAttribute('target','_blank');
+    }
+
+    CTA.removeAttribute('href');
+    
+  </script>
+  </body>
+</html>

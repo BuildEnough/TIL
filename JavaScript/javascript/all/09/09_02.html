@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>setTime</title>
+  <style>
+    p {
+      margin: 0 auto 100px;
+      padding: 0;
+      width:80%;height:150px;
+      background-color:#FFF;
+      color:#04539c;
+      font:bold 20px/150px Arial,sans-serif;
+      text-align:center;
+
+    }
+p:first-child{height:85px; line-height:85px;}
+    button {
+      width: 150px;
+      height: 40px;
+      color: #fff;
+      background-color: red;
+      margin-bottom: 30px;
+      border:none;
+    }
+    div {
+      width: 500px;height:130px;
+      padding:25px 0px;
+      background-color:#17c78d;
+      box-sizing:border-box;
+      overflow:hidden;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <button>클릭하면 1초 후에 안내문 보기</button>
+  <div>
+    <p class="time">클릭하면 1초 후에 보입니다.</p>
+    <p> welcome.</p>
+  </div>
+  <script>
+    const BTN =  document.querySelector('button');
+    const DIV =  document.querySelector('div');
+
+    function play(e){
+      var i = 0;
+      setTimeout(function(){
+        DIV.style.height= 500+'px';
+      },1000);
+    }
+    BTN.addEventListener('click',play);
+  </script>
+</body>
+
+</html>

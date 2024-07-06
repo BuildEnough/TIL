@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="headerWrap">
+  <header>
+    <h1><a href="#">My Portfolio</a></h1>
+    <nav>
+<h2 class="hideClass">메인네비게이션</h2>
+<ul>
+  <li class="num01"><a href="#">home</a></li>
+  <li class="num02" ><a href="#">about</a></li>
+  <li class="num03"><a href="#">portfolio</a></li>
+  <li><a href="#">contact</a></li>
+</ul>
+    </nav>
+  </header>
+</div>
+  
+<!-- sec01 -->
+<div id="sec01">
+  <section>
+    <article id="skill">
+<h4>skill</h4>
+<dl>
+  <dt id="num01" class="main">Photoshop</dt>
+  <dd>90%</dd>
+  <dt>illustrator</dt>
+  <dd>80%</dd>
+  <dt>Html/Css</dt>
+  <dd>90%</dd>
+  <dt>PowerPoint</dt>
+  <dd>70%</dd>
+  <dt>jQuery</dt>
+  <dd>80%</dd>
+</dl>
+    </article>
+  </section>
+  
+    <h3 class="hideClass">나의 슬로건</h3>
+    <p>Inspire with heart
+  Life's a deisgn
+  Everything idea</p>
+    <ul>
+<li>
+  <dl>
+    <dt>MY STORY</dt>
+    <dd>design is what you make of it photoshop illustrotor html css jQuery</dd>
+  </dl>
+</li>
+<li>
+  <dl>
+    <dt>DESIGN</dt>
+    <dd>hyundai official site main nike korea site main illustration</dd>
+  </dl>
+</li>
+<li>
+  <dl>
+    <dt>CODING</dt>
+    <dd>guess official site mainhyundai official site mainsk cm mobile site main</dd>
+  </dl>
+</li>
+    </ul>
+  </section>
+</div>
+<script>
+document.querySelector('nav>ul>li:nth-child(1)').classList.add('sub');
+document.querySelector('nav>ul>li:nth-child(2)').classList.remove('num02');
+
+const sub = document.querySelector('nav>ul>li:nth-child(3)').classList.contains('num03');
+console.log(sub);
+</script>
+</body>
+</html>

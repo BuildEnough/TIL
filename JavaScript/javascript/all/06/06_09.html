@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+ 
+</head>
+  <body>
+    <script>
+      class Rect{
+        constructor(width,height){ 
+          this.width = width; 
+          this.height = height; 
+        }
+        area(){
+          console.log(this.width * this.height) 
+        }
+      }
+      const myRect = new Rect(100,300) 
+      myRect.area(); 
+      class Triangle extends Rect{ 
+        constructor(width,height){ 
+          super(width,height)
+        }
+        area(){
+          console.log((this.width * this.height)/2) 
+        }
+      }
+      const myTri = [
+        new Triangle(100,300), 
+        new Triangle(40,70) 
+      ]
+      myTri[0].area();
+      myTri[1].area()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+
+</head>
+  <body>
+    <script>
+      class Book{
+        constructor(title,actor,year){
+        this.title = title
+        this.actor = actor
+        this.year = year
+        }
+        list(){
+        console.log(
+        `${this.title}: ${this.actor} : ${this.year}` 
+        )
+        } 
+        }
+        const it = [
+            new Book('photoshop','A작가',2021), 
+            new Book('javascript','B작가',2022) 
+        ]
+        it[0].list(); 
+         it[1].list()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date객체</title>
+</head>
+<body>
+<script>
+var Today = new Date();
+console.log(Today.getFullYear());
+document.write('오늘은 ',Today.getFullYear(),'년 ',Today.getMonth()+1,'월 ',Today.getDate(),'일 ');
+
+switch(Today.getDay()){
+  case 0 : document.write('일요입니다.');
+        break;
+  case 1 : document.write('월요입입니다.');
+        break;
+  case 2 : document.write('화요일입니다.');
+        break;
+  case 3 : document.write('수요일입니다.');
+        break;
+  case 4 : document.write('목요입니다.');
+        break;
+  case 5 : document.write('금요입니다.');
+        break;
+  case 6 : document.write('토요입니다.');
+        break;
+}
+</script>
+</body>
+</html>

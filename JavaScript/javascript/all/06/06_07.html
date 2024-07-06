@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 객체1</title>
+    <link rel="stylesheet" href="css/box.css">
+</head>
+  <body>
+    <script>
+    function Picture(image,title, artist,year){
+      this.image = image;
+      this.title = title;
+      this.artist =artist ;
+      this.year = year;
+    }
+    //proto
+    Picture.prototype.art = function(){
+        document.write('<dl><dt>',this.artist,'</dt><dd><img src="',this.image,'"></dd><dd>',this.title,'</dd></dl>');
+    }
+
+    Picture.prototype.artYear = function(){
+        document.write('<p><span>',this.title,': </span><span>',this.year,'</span></p>');
+    }
+
+var picture = [
+  new Picture('images/pic01.jpg','에펠탑의 신랑신부','마르크 샤갈',2000),
+  new Picture('images/pic02.jpg','제목2','아티스트2',2001),
+  new Picture('images/pic03.jpg','제목3','아티스트3',2002),
+  new Picture('images/pic04.jpg','제목4','아티스트4',2003)
+  ]
+
+var num = picture.length;
+console.log(num);
+
+ for(i=0; i<=num-1 ; i++){
+   picture[i].art();
+ }
+
+ for(i=0; i<=num-1 ; i++){
+   picture[i].artYear();
+ }
+    </script>
+  </body>
+</html>

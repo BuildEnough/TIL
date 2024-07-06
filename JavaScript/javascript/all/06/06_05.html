@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 객체1</title>
+    <link rel="stylesheet" href="css/box.css">
+</head>
+<body>
+<script>
+function Picture(image,title, artist){
+  this.image = image;
+  this.title = title;
+  this.artist =artist ;
+  this.art = function(){
+    document.write('<dl><dt>',this.artist,'</dt><dd><img src="',this.image,'"></dd><dd>',this.title,'</dd></dl>');
+  }
+}
+
+var Picture01 = new Picture('images/pic01.jpg','에펠탑의 신랑신부','마르크 샤갈');
+var Picture02 = new Picture('images/pic02.jpg','꿈','파블로 피카소');
+var Picture03 = new Picture('images/pic03.jpg','무용실','에드가 드가');
+var Picture04 = new Picture('images/pic04.jpg','피아노치는 소녀들','오귀스트 르누아르');
+console.log(Picture02);
+ Picture01.art();
+ Picture02.art();
+ Picture03.art();
+ Picture04.art();
+    </script>
+</body>
+</html>

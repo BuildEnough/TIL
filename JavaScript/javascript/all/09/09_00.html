@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시계만들기</title>
+<style>
+div{text-align:center;width:500px; margin:0 auto;font:bold 25px/45px '나눔고딕',sans-serif;color:#666;}
+div>p{display:inline-block;}
+ </style>
+</head>
+<body>
+<div><p class="num01">현재시간</p><p class="num02">현재분</p><p class="num03">현재초</p></div>
+<script>
+//변수만들기
+var hrText = document.querySelector('.num01');
+var minText = document.querySelector('.num02');
+var secText = document.querySelector('.num03');
+
+//함수만들기
+function time(){
+    var date =  new Date();
+    var hr = date.getHours();
+    var min =  date.getMinutes();
+    var sec = date.getSeconds();
+
+    console.log(hr);
+    console.log(min);
+    console.log(sec);
+
+//시간
+    if(hr>12){
+        hrText.innerHTML = hr-12<10 ? `오후 0${hr-12} :`  : `오후 ${hr-12} :` ;
+    } else{
+    hrText.innerHTML = hr<10 ? `오전 0${hr} :` : `오전 ${hr} :`;
+  }
+//분
+    minText.innerHTML = min<10 ? `0${min} :` : `${min} :`;
+//초
+    secText.innerHTML = sec<10 ? `0${sec}` : `${sec}`;
+  }
+//타이머만들기
+var timeT = setInterval(time,1000);
+//사용하기
+time();
+</script>
+
+</body>
+</html>

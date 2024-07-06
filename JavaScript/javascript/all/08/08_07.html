@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+<meta charset="utf-8">
+<title>Event</title>
+<style>
+    *{margin:0; padding:0;}
+body{height:1500px;}
+/* CTA */
+.hide{
+  	height: 0;
+  	overflow: hidden;
+  }
+header{height:800px; background-color:yellow;
+line-height:400px; text-align:center;color:orange;}
+.cta {
+padding: 3em;
+background: #B51C35;
+text-align: center;
+}
+.cta a {
+  	display: inline-block;
+padding: 0 .5em;
+font-size: 2em;
+font-weight: 900;
+color: #FFFCED;
+text-decoration: none;
+border: 5px solid #FFFCED;
+  }
+section {
+margin: 0 auto;
+padding: 0 1em;
+  }
+</style>
+  </head>
+  <body>
+<header><h1>welcome</h1></header>
+<div class="cta">
+<a href="#">예약 합니다.</a>
+<section id="no" class="hide">
+  <h3 class="title">Sorry about that!</h3>
+  <p>By some weird coincidence, all the rooms at Moonwalk Manor are booked out for the date you planned to take your trip. Unfortunately we are unable to provide you with sufficient lodging for your party at this time. Moonwalk Manor is very busy and your satisfaction is our top priority. When you take your first steps in the moon dust, your life will change. We are always at your service. Your satisfaction matters to us.</p>
+</section>
+<script>
+  //변수만들기
+const BTN = document.querySelector('.cta>a');
+const ALERT = document.querySelector('#no');
+
+  //event
+function info(e){
+ e.preventDefault();
+  ALERT.classList.toggle('hide');
+}
+
+BTN.addEventListener('click',info);
+BTN.addEventListener('click',function(){console.log('버튼클릭')});
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+*{margin:0; padding:0;}
+ul,li{list-style:none;}
+body{text-align:center;}
+dl{display:inline-block;
+  width:300px; margin: 0 25px;
+padding:25px 0;
+vertical-align:top;}
+dl img{width:100%;}
+dl>dt{margin-bottom:25px;
+    font: bold 1.5em '나눔고딕',sans-serif;}
+
+p{width:500px; margin: 0 auto 25px; border: 1px solid #666;
+  text-align:left; position:relative;
+line-height:25px;}
+p>span:last-child{position:absolute; right:15px;}
