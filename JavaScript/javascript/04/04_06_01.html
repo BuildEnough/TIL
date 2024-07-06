@@ -6,6 +6,24 @@
     <title>제어문 :  for문 </title>
 </head>
 <body>
-    <script></script>
+    <script>
+        let sum = 0;
+        for(let i=1; i<=100; i++) {
+            sum += i;
+        }
+        document.write(sum);
+    </script>
+
+    <script>
+
+        var num = prompt('숫자 입력: ');
+
+        for(let i=num; i<=9; i++) {
+            document.write(`<br>`)
+            for(let j=1; j<=9; j++) {
+                document.write(`${i} * ${j} = ${i*j} <br>`);
+            }
+        }
+    </script>
 </body>
 </html>
