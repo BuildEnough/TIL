@@ -67,6 +67,27 @@
     </ul>
   </section>
 </div>
-<script></script>
+<script>
+  const main = document.getElementById('skill');
+  console.log(main);
+
+  const sub = document.getElementsByTagName('a');
+  console.log(sub);
+
+  const sub2 = document.getElementsByTagName('a')[2];
+  console.log(sub2);
+
+  sub2.style.backgroundColor = 'red';
+
+  const se1 = document.querySelector('#skill>dl')
+  console.log(se1);
+  se1.style.backgroundColor = 'yellow';
+
+  const se2 = document.querySelectorAll('nav>ul>li>a');
+  console.log(se2);
+
+  const se3 = document.querySelectorAll('nav>ul>li>a')[2];
+  se3.innerHTML='welcome';
+</script>
 </body>
 </html>

@@ -24,6 +24,16 @@
   <div class="cta">
     <a href="#">DOM TEST</a>
   </div>
-  <script></script>
+  <script>
+    const CTA = document.querySelector('.cta>a');
+
+    if(CTA.hasAttribute('target')){
+      console.log(CTA.getAttribute('target'));
+    } else {
+      CTA.setAttribute('target', 'blank');
+    }
+
+    CTA.removeAttribute('href');
+  </script>
   </body>
 </html>

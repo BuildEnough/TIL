@@ -6,7 +6,18 @@
     <title>함수식</title>
 </head>
 <body>
-  <script></script>
+  <script>
+    var first = 5;
+    var last = 7;
+
+    var all = (function(a, b) {
+      var result;
+      a>b ? result = 'a가 더 큼' : result= 'b가 더 큼';
+      return result;
+    })(first, last)
+
+    console.log(all);
+  </script>
 
 </body>
 </html>
