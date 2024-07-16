@@ -11,20 +11,18 @@ public class Main {
         int M = Integer.parseInt(stringTokenizer.nextToken());
 
         long[] S = new long[N+1];
-
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        // 합 배열 만들기
         for(int i=1; i<=N; i++) {
             S[i] = S[i-1] + Integer.parseInt(stringTokenizer.nextToken());
         }
 
-        // 질의 개수만큼 반복
         for(int q=0; q<M; q++) {
-            stringTokenizer = new StringTokenizer(bufferedReader.readLine());
+        stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             int i = Integer.parseInt(stringTokenizer.nextToken());
             int j = Integer.parseInt(stringTokenizer.nextToken());
 
-            System.out.println(S[j] - S[i-1]);
+            System.out.println(S[j]- S[i-1]);
         }
+
     }
 }
