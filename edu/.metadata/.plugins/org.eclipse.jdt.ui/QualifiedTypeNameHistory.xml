@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="TelevisionTest"/>
+    <fullyQualifiedTypeName name="Television"/>
+    <fullyQualifiedTypeName name="Car"/>
+    <fullyQualifiedTypeName name="BadBank"/>
+    <fullyQualifiedTypeName name="NormalBank"/>
+    <fullyQualifiedTypeName name="GoodBank"/>
+    <fullyQualifiedTypeName name="BestBank"/>
 </qualifiedTypeNameHistroy>
