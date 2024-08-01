@@ -12,4 +12,20 @@
     <fullyQualifiedTypeName name="NormalBank"/>
     <fullyQualifiedTypeName name="GoodBank"/>
     <fullyQualifiedTypeName name="BestBank"/>
+    <fullyQualifiedTypeName name="MyFrame"/>
+    <fullyQualifiedTypeName name="MyFrame2"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="java.awt.GridBagLayout"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
+    <fullyQualifiedTypeName name="java.awt.GridLayout"/>
+    <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+    <fullyQualifiedTypeName name="RockScissorPaper"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextField"/>
+    <fullyQualifiedTypeName name="org.xml.sax.helpers.AttributeListImpl"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+    <fullyQualifiedTypeName name="javax.swing.JLabel"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionEvent"/>
 </qualifiedTypeNameHistroy>
