@@ -86,3 +86,15 @@ public class Calculator extends JFrame {
 	}
 }
 ```
+
+
+## 2024-08-02(금)
+APMSETUP  
+APMSETUP 비밀번호: root, apmsetup  
+
+```
+url
+conn
+stmt
+rs
+```
