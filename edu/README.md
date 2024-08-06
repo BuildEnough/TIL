@@ -98,3 +98,95 @@ conn
 stmt
 rs
 ```
+
+## 2024-08-06(화)
+ORACLE XE 11g  
+root 계정, PW: 1234  
+사용자 계정: SCOTT 
+```sql
+SELECT * FROM emp;
+SELECT empno, ename, sal FROM emp WHERE sal >= 4000;
+SELECT ename, hiredate FROM emp WHERE hiredate > '81/12/25';
+
+SELECT empno, ename, sal FROM emp WHERE sal BETWEEN 2000 AND 3000;
+
+SELECT ename FROM emp ORDER BY ename;
+
+SELECT ename FROM emp WHERE ename BETWEEN 'JAMES' AND 'MARTIN' ORDER BY ename;
+
+SELECT empno, ename, deptno FROM emp WHERE deptno IN(10, 20);
+
+SELECT empno, ename, sal FROM emp WHERE sal LIKE '1%';
+SELECT empno, ename, sal FROM emp WHERE sal LIKE '1___';
+
+SELECT empno, ename, sal FROM emp WHERE ename LIKE 'A%';
+
+SELECT ename, hiredate FROM emp WHERE ename = 'SMITH';
+SELECT empno, ename, hiredate FROM emp WHERE hiredate LIKE '80%';
+
+SELECT empno, ename, hiredate FROM emp WHERE hiredate LIKE '___12%';
+
+SELECT deptno, ename, comm FROM emp WHERE deptno in (20, 30);
+
+SELECT empno, ename, comm FROM emp WHERE comm IS NOT NULL;
+
+SELECT ename, hiredate, sal FROM emp WHERE hiredate > '82/01/01' AND sal >= 1300;
+SELECT ename, hiredate, sal FROM emp WHERE hiredate > '82/01/01' OR sal >= 1300;
+
+SELECT empno, ename, sal, comm
+FROM emp
+WHERE sal > 1000
+AND (comm < 1000 OR comm IS NULL);
+
+SELECT empno, ename, sal, comm
+FROM emp
+WHERE sal > 1000
+AND comm < 1000 OR comm IS NULL;
+
+SELECT empno, ename, hiredate
+FROM emp
+WHERE sal > 1000
+ORDER BY 2, 1;
+
+SELECT studno, name, deptno1, 1
+FROM student
+WHERE deptno1 LIKE 101
+UNION ALL
+SELECT profno, name, deptno, 2
+FROM professor
+WHERE deptno LIKE 101;
+
+SELECT studno, name, deptno1, 1
+FROM student
+WHERE deptno1 LIKE 101
+UNION
+SELECT profno, name, deptno, 2
+FROM professor
+WHERE deptno LIKE 101;
+
+SELECT studno, name
+FROM student
+WHERE deptno1 LIKE 101
+INTERSECT
+SELECT studno, name
+FROM student
+WHERE deptno2 LIKE 201;
+
+SELECT empno, ename, sal
+FROM emp
+MINUS
+SELECT empno, ename, sal
+FROM emp
+WHERE sal > 2500;
+
+SELECT 'A-B-C-D', INSTR('A-B-C-D', '-', -6, 2) "INSTR"
+FROM dual;
+
+SELECT name, tel, INSTR(tel, ')')
+FROM student
+WHERE deptno1 = 201;
+
+SELECT name, tel, SUBSTR(tel, 0, INSTR(tel, ')')-1) AS "AREA CODE"
+FROM student
+WHERE deptno1 LIKE 201;
+```
