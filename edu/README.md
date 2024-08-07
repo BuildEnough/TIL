@@ -1,20 +1,21 @@
 # 교육
-## 2024-07-29(월)
+## JAVA
+### 2024-07-29(월)
 OT  
 자바 설정  
 자바 기본 출력
 
-## 2024-07-30(화)
+### 2024-07-30(화)
 조건문(if, switch)
 반복문(for)
 
-## 2024-07-31(수)
+### 2024-07-31(수)
 클래스  
 객체  
 생성자  
 메소드
 
-## 2024-08-01(목)
+### 2024-08-01(목)
 자바 AWT와 스윙  
 GUI  
 ```java
@@ -87,8 +88,8 @@ public class Calculator extends JFrame {
 }
 ```
 
-
-## 2024-08-02(금)
+## DATABASE
+### 2024-08-02(금)
 APMSETUP  
 APMSETUP 비밀번호: root, apmsetup  
 
@@ -99,7 +100,7 @@ stmt
 rs
 ```
 
-## 2024-08-06(화)
+### 2024-08-06(화)
 ORACLE XE 11g  
 root 계정, PW: 1234  
 사용자 계정: SCOTT 
@@ -189,4 +190,165 @@ WHERE deptno1 = 201;
 SELECT name, tel, SUBSTR(tel, 0, INSTR(tel, ')')-1) AS "AREA CODE"
 FROM student
 WHERE deptno1 LIKE 201;
+```
+
+### 2024-08-07(수)
+ORACLE 함수  
+많이 사용하는 함수를 잘 알고 사용하자  
+`묵시적 형 변환`과 `묵시적 형변환`  
+```SQL
+SELECT * FROM emp;
+
+SELECT MAX(sal + NVL(comm, 0)) AS MAX,
+MIN(sal + NVL(comm, 0)) AS MIN,
+ROUND(avg(sal+NVL(comm, 0)), 1) AS AVG
+FROM emp;
+
+SELECT ename, REPLACE(ename, SUBSTR(ename, 1, 2), '**') AS REPLACE
+FROM emp
+WHERE deptno LIKE 10;
+
+SELECT ename, REPLACE(ename, SUBSTR(ename, 2, 2), '--') AS REPLACE
+FROM emp
+WHERE deptno LIKE 20;
+
+
+SELECT name, tel, REPLACE(tel, SUBSTR(tel, INSTR(tel, ')', 1)+1, 3), '***') AS REPLACE
+FROM student
+WHERE deptno1 LIKE 102;
+
+SELECT ROUND(987.654, 2) AS ROUND1,
+        ROUND(987.654, 0) AS ROUND2,
+        ROUND(987.654, -1) AS ROUND3
+FROM dual;
+
+
+SELECT TRUNC(987.654, 2) AS TRUNC1,
+        TRUNC(987.654, 0) AS TRUNC2,
+        TRUNC(987.654, -1) AS TRUNC3
+FROM dual;
+
+SELECT MOD(121, 10) AS MOD,
+        CEIL(123.45) AS CEIL,
+        FLOOR(123.45) AS FLOOR
+FROM dual;
+
+SELECT SYSDATE FROM dual;
+
+SELECT MONTHS_BETWEEN('14/09/30' ,'14/08/31') AS MONTHS_BETWEEN
+FROM dual;
+
+SELECT ABS(MONTHS_BETWEEN('14/08/30' ,'14/09/30')) AS MONTHS_BETWEEN
+FROM dual;
+
+SELECT studno, name, birthday
+FROM student
+WHERE TO_CHAR(birthday, 'MM') = '01';
+
+SELECT empno, ename, hiredate
+FROM emp
+WHERE TO_CHAR(hiredate, 'MM') IN ('01', '02', '03');
+
+SELECT empno, ename, sal, comm,
+TO_CHAR((sal*12)+comm, '999,999') AS SALARY
+FROM emp
+WHERE ename = 'ALLEN';
+
+SELECT name, pay, bonus,
+TO_CHAR((pay*12)+bonus, '999,999') AS TOTAL
+FROM professor
+WHERE deptno LIKE 201;
+
+SELECT empno, ename, hiredate,
+TO_CHAR((sal*12)+comm, '$999,999') AS SAL,
+TO_CHAR(((sal*12)+comm)*1.15, '$999,999') AS "15% UP"
+FROM emp
+WHERE comm IS NOT NULL;
+
+SELECT TO_NUMBER('5')
+FROM dual;
+
+-- SELECT TO_NUMBER('A') FROM dual;
+
+SELECT ASCII('A') AS "아스키 코드"
+FROM dual;
+
+SELECT TO_DATE('14/05/31') FROM dual;
+SELECT TO_DATE('2014/05/31') FROM dual;
+
+SELECT ename, comm, NVL(comm, 0), NVL(comm, 100)
+FROM emp
+WHERE deptno = 30;
+
+SELECT profno, name, pay, bonus,
+    TO_CHAR((pay*12)+NVL(bonus, 0), '999,999') AS TOTAL
+FROM Professor
+WHERE deptno = 201;
+
+SELECT empno, ename, sal, comm,
+    NVL2(comm, sal+comm, sal * 0) AS "NVL2"
+FROM emp
+WHERE deptno = 30;
+
+SELECT empno, ename, sal, comm,
+    NVL(comm, sal+comm) AS "NVL"
+FROM emp
+WHERE deptno = 30;
+
+SELECT empno, ename, comm,
+    NVL2(comm, 'Exist', 'NULL') AS "NVL2"
+FROM emp
+WHERE deptno = 30;
+
+SELECT empno, ename, comm,
+    NVL(TO_CHAR(comm), 'NULL') AS "NVL"
+FROM emp
+WHERE deptno = 30;
+
+SELECT deptno, name, DECODE(deptno, 101, 'Computer Engineering') AS "DNAME"
+FROM professor;
+
+SELECT deptno, name, 
+       DECODE(deptno, 101, 'Computer Engineering', ' ') AS "DNAME"
+FROM professor;
+
+SELECT name, jumin,
+    DECODE(SUBSTR(jumin, 7, 1), '1', 'MAN', '2', 'WOMAN') AS "GENDER"
+FROM student
+WHERE deptno1 LIKE 101;
+
+
+SELECT name, tel,
+    DECODE(SUBSTR(tel, 1, INSTR(tel, ')')-1), '02', '서울',
+                                            '031', '경기',
+                                            '051', '부산',
+                                            '052', '울산',
+                                            '055', '경남') "LOC"
+FROM student
+WHERE deptno1 LIKE 101;
+
+SELECT name, tel,
+    CASE
+        WHEN SUBSTR(tel, 1, INSTR(tel, ')')-1) = '02' THEN '서울'
+        WHEN SUBSTR(tel, 1, INSTR(tel, ')')-1) = '031' THEN '경기'
+        WHEN SUBSTR(tel, 1, INSTR(tel, ')')-1) = '051' THEN '부산'
+        WHEN SUBSTR(tel, 1, INSTR(tel, ')')-1) = '052' THEN '울산'
+        WHEN SUBSTR(tel, 1, INSTR(tel, ')')-1) = '055' THEN '경남'
+        ELSE '기타'
+    END AS "LOC"
+FROM student
+WHERE deptno1 LIKE 101;
+
+SELECT empno, ename, sal,
+    CASE WHEN sal BETWEEN 1 AND 1000 THEN 'LEVEL 1'
+        WHEN sal BETWEEN 1001 AND 2000 THEN 'LEVEL 2'
+        WHEN sal BETWEEN 2001 AND 3000 THEN 'LEVEL 3'
+        WHEN sal BETWEEN 3001 AND 4000 THEN 'LEVEL 4'
+    END "LEVEL"
+FROM emp
+ORDER BY sal DESC;
+
+SELECT *
+FROM t_reg
+WHERE REGEXP_LIKE(text, '[a-z]');
 ```
