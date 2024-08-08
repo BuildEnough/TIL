@@ -352,3 +352,6 @@ SELECT *
 FROM t_reg
 WHERE REGEXP_LIKE(text, '[a-z]');
 ```
+
+### 2024-08-08(목)
+원하는 데이터를 데이터베이스 안에서 찾아오는 것이 제일 중요함  
