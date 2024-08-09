@@ -355,3 +355,240 @@ WHERE REGEXP_LIKE(text, '[a-z]');
 
 ### 2024-08-08(목)
 원하는 데이터를 데이터베이스 안에서 찾아오는 것이 제일 중요함  
+```SQL
+-- 소문자로 시작하지 않는 행
+SELECT *
+FROM t_reg
+WHERE REGEXP_LIKE(text, '^[^a-z]');
+
+-- 숫자로 시작하지 않는 행
+SELECT *
+FROM t_reg
+WHERE REGEXP_LIKE(text, '^[^0-9]');
+
+-- 소문자가 들어 있는 모든 행 제거
+SELECT *
+FROM t_reg
+WHERE NOT REGEXP_LIKE(text, '[a-z]');
+
+-- student 테이블에서 지역번호가 2자리, 국번이 연속적으로 4자리가 나오는 값 출력
+SELECT name, tel
+FROM student
+WHERE REGEXP_LIKE(tel, '^[0-9]{2}\)[0-9]{4}');
+
+--student 테이블에서 학생의 id에서 4번째 자리에 r(소문자)이 있는 행 출력
+SELECT name, id
+FROM student
+WHERE REGEXP_LIKE(id, '...r.');
+
+-- 75true 입력
+SELECT studno, name, id
+FROM student
+WHERE id=REGEXP_REPLACE('&id', '( ){1,}', '');
+
+--문자열에서 기호를 기준으로 3번 째의 문자열을 출력
+SELECT REGEXP_SUBSTR('sys/oracle@racdb:1521:racdb', '[^:]+', 1, 3) result
+FROM dual;
+
+--문자열에서 기호를 기준으로 2번 째의 문자열을 출력
+SELECT REGEXP_SUBSTR('sys/oracle@racdb:1521:racdb', '[^:]+', 1, 2) result
+FROM dual;
+
+-- 대문자 A의 개수 출력
+SELECT text, REGEXP_COUNT(text, 'A')
+FROM t_reg;
+
+
+SELECT deptno, job, AVG(NVL(sal, 0)) "AVG_SAL"
+FROM emp
+GROUP BY deptno, job
+ORDER BY 1, 2 DESC;
+
+SELECT deptno, job, ROUND(AVG(sal), 1) AS avg_sal, COUNT(*) AS cnt_emp
+FROM emp
+GROUP BY ROLLUP (deptno, job);
+
+SELECT deptno, position, COUNT(*), SUM(PAY)
+FROM professor
+GROUP BY deptno, ROLLUP(position);
+
+
+
+CREATE TABLE professor2
+AS SELECT deptno, position, pay
+FROM professor;
+
+INSERT INTO professor2 VALUES(101, 'instructor', 100);
+INSERT INTO professor2 VALUES(101, 'a full professor', 100);
+INSERT INTO professor2 VALUES(101, 'assistant professor', 100);
+
+SELECT * FROM professor2
+ORDER BY deptno, position;
+
+SELECT deptno, position, SUM(pay)
+FROM professor2
+GROUP BY deptno, ROLLUP(position);
+
+-- CUBE 함수: 소계와 전체 합계까지 출력하는 함수
+SELECT deptno, NULL JOB, ROUND(AVG(sal), 1) AS AVG_SAL, COUNT(*) AS CNT_EMP
+FROM emp
+GROUP BY deptno
+UNION ALL
+SELECT NULL deptno, job, ROUND(AVG(sal), 1) AVG_SAL, COUNT(*) AS CNT_EMP
+FROM emp
+GROUP BY job
+UNION ALL
+SELECT deptno, job, ROUND(AVG(sal), 1) AS AVG_SAL, COUNT(*) AS CNT_EMP
+FROM emp
+GROUP BY deptno, job
+UNION ALL
+SELECT NULL deptno, NULL job, ROUND(AVG(sal), 1) AS AVG_SAL, COUNT(*) AS CNT_EMP
+FROM emp
+ORDER BY deptno, job;
+
+SELECT grade, deptno1, COUNT(*), SUM(height), SUM(weight)
+FROM student
+GROUP BY GROUPING SETS(grade, deptno1);
+
+SELECT deptno, LISTAGG(ename, '->') WITHIN GROUP(ORDER BY hiredate) AS "LISTAGG"
+FROM emp
+GROUP BY deptno;
+
+SELECT MAX(DECODE(day, 'SUN', dayno)) AS SUN,
+        MAX(DECODE(day, 'MON', dayno)) AS MON,
+        MAX(DECODE(day, 'TUE', dayno)) AS TUE,
+        MAX(DECODE(day, 'WED', dayno)) AS WED,
+        MAX(DECODE(day, 'THU', dayno)) AS THU,
+        MAX(DECODE(day, 'FRI', dayno)) AS FRI,
+        MAX(DECODE(day, 'SAT', dayno)) AS SAT
+FROM cal
+GROUP BY weekno
+ORDER BY Weekno;
+
+SELECT (DECODE(day, 'SUN', dayno, ' ')) AS SUN,
+       (DECODE(day, 'MON', dayno, ' ')) AS MON,
+       (DECODE(day, 'TUE', dayno, ' ')) AS TUE,
+       (DECODE(day, 'WED', dayno, ' ')) AS WED,
+       (DECODE(day, 'THU', dayno, ' ')) AS THU,
+       (DECODE(day, 'FRI', dayno, ' ')) AS FRI,
+       (DECODE(day, 'SAT', dayno, ' ')) AS SAT
+FROM cal;
+
+SELECT ASCII('2')
+FROM dual;
+
+SELECT ASCII('29')
+FROM dual;
+
+SELECT ASCII('8')
+FROM dual;
+
+
+SELECT * FROM (SELECT deptno, job, empno FROM emp)
+PIVOT (
+    COUNT(empno) FOR job in ('CLERK' AS "CLERK",
+                            'MANAGER' AS "MANAGER",
+                            'PRESIDENT' AS "PRESIDENT",
+                            'ANALYST' AS "ANSLYST",
+                            'SALESMAN' AS "SALESMAN")
+        )
+ORDER BY deptno;
+
+SELECT * FROM (SELECT deptno, job, empno, sal FROM emp)
+PIVOT (
+    COUNT(empno) AS COUNT,
+    SUM(NVL(sal, 0)) AS SUM FOR job IN ('CLERK' AS "C",
+                            'MANAGER' AS "M",
+                            'PRESIDENT' AS "P",
+                            'ANALYST' AS "A",
+                            'SALESMAN' AS "S")
+        )
+ORDER BY deptno;
+
+
+
+CREATE TABLE upivot
+AS SELECT * FROM (SELECT deptno, job, empno FROM emp)
+PIVOT (
+    COUNT(empno)
+    FOR job IN ('CLERK' AS "CLERK",
+                'MANAGER' AS "MANAGER",
+                'PRESIDENT' AS "PRESIDENT",
+                'ANALYST' AS "ANSLYST",
+                'SALESMAN' AS "SALESMAN")
+        );
+SELECT * FROM upivot;
+
+SELECT ename, hiredate, sal,
+    LAG(sal, 1, 0) OVER(ORDER BY hiredate) "LEG"
+FROM  emp;
+
+SELECT ename, hiredate, sal,
+    LAG(sal, 2, 0) OVER(ORDER BY hiredate) "LEG"
+FROM  emp;
+
+SELECT ename, hiredate, sal,
+    LAG(sal, 3, 0) OVER(ORDER BY hiredate) "LEG"
+FROM  emp;
+
+SELECT ename, hiredate, sal,
+    LAG(sal, 1, 2) OVER(ORDER BY ename) "LEG"
+FROM  emp;
+
+SELECT ename, hiredate, sal,
+    LAG(sal, 2, 2) OVER(ORDER BY ename) "LEG"
+FROM  emp;
+
+SELECT ename, hiredate, sal,
+    LAG(sal, 3, 2) OVER(ORDER BY ename) "LEG"
+FROM  emp;
+
+SELECT ename, hiredate, sal,
+    LEAD(sal, 2, 1) OVER(ORDER BY hiredate) "LEAD"
+FROM  emp;
+
+SELECT RANK('SMITH') WITHIN GROUP(ORDER BY ename) "RANK"
+FROM emp;
+
+SELECT empno, ename, sal,
+    RANK() OVER(ORDER BY sal) AS RNAK_ASC,
+    RANK() OVER(ORDER BY sal DESC) AS RNAK_DESC
+FROM emp;
+
+SELECT empno, ename, sal,
+    RANK() OVER(ORDER BY sal DESC) AS RNAK
+FROM emp
+WHERE deptno = 10;
+
+SELECT empno, ename, sal, deptno,
+    RANK() OVER(PARTITION BY deptno
+                ORDER BY sal DESC) AS RANK
+FROM emp;
+
+SELECT empno, ename, sal, deptno,
+    RANK() OVER(PARTITION BY deptno, job
+                ORDER BY sal DESC) AS RANK
+FROM emp;
+
+SELECT empno, ename, sal,
+    RANK() OVER(ORDER BY sal DESC) AS sal_rank,
+    DENSE_RANK() OVER(ORDER BY sal DESC) sal_dense_rank
+FROM emp;
+
+SELECT p_date, p_code, p_qty, p_total,
+        SUM(p_total) OVER(ORDER BY p_total) AS TOTAL
+FROM panmae
+WHERE p_store = 1000;
+
+SELECT p_date, p_code, p_qty, p_total,
+        SUM(p_total) OVER(PARTITION BY p_code ORDER BY p_total) AS TOTAL
+FROM panmae
+WHERE p_store = 1000;
+
+SELECT p_code, p_store, p_date, p_qty, p_total,
+        SUM(p_total) OVER(PARTITION BY p_code, p_store ORDER BY p_date) AS TOTAL
+FROM panmae;
+```
+
+### 2024-08-09(금)
+JOIN
