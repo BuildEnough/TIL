@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "ujxEFbcTMdK26cMFUsDoFmT37a/IdP96NYNnRBjHQ5j/i1xuRB4W03fVaM29juznjY9afbE9IbHAecokpZcFXg==",
+  "success": true,
+  "projectFilePath": "/Users/kim/Desktop/TIL/C#/sol1/Hello/Hello/Hello.csproj",
+  "expectedPackageFiles": [
+    "/Users/kim/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.31/microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512",
+    "/Users/kim/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.31/microsoft.netcore.app.host.osx-arm64.6.0.31.nupkg.sha512",
+    "/Users/kim/.nuget/packages/microsoft.netcore.app.ref/6.0.31/microsoft.netcore.app.ref.6.0.31.nupkg.sha512"
+  ],
+  "logs": []
+}
