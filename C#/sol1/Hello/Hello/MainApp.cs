@@ -3,7 +3,7 @@ using static System.Console;
 
 namespace Hello
 {
-    class MainApp
+    internal class MainApp
     {
         // program start
         static void Main(String[] args)
@@ -16,4 +16,4 @@ namespace Hello
             WriteLine("Hello, {0}", args[0]);
         }
     }
-}
+} 

@@ -1,0 +1,15 @@
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\bin\Debug\net8.0\Hello.exe
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\bin\Debug\net8.0\Hello.deps.json
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\bin\Debug\net8.0\Hello.runtimeconfig.json
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\bin\Debug\net8.0\Hello.dll
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\bin\Debug\net8.0\Hello.pdb
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\Hello.GeneratedMSBuildEditorConfig.editorconfig
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\Hello.AssemblyInfoInputs.cache
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\Hello.AssemblyInfo.cs
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\Hello.csproj.CoreCompileInputs.cache
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\Hello.sourcelink.json
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\Hello.dll
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\refint\Hello.dll
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\Hello.pdb
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\Hello.genruntimeconfig.cache
+D:\바탕화면\TIL\C#\sol1\Hello\Hello\obj\Debug\net8.0\ref\Hello.dll
