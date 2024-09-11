@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace A014_StringToNumber
 {
@@ -15,7 +11,7 @@ namespace A014_StringToNumber
 
             Console.Write("1. int로 변환할 문자열을 입력하세요: ");
             input = Console.ReadLine(); // Console.ReadLine()로 문자열을 입력받아 string input에 저장
-            bool result = Int32.TryParse(input, out value);
+            bool result = Int32.TryParse(input, out value); // input을 정수 value로 반환, 성공시 result는 true, 실패시 result는 false
 
             if (!result)
                 Console.WriteLine("'{0}'는 int로 변활될 수 없습니다.\n", input);
