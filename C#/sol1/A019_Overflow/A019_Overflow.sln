@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.35116.124
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A002_HelloWorld", "A002_HelloWorld\A002_HelloWorld.csproj", "{3155556E-2441-44E8-926E-80599A69FA2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A019_Overflow", "A019_Overflow\A019_Overflow.csproj", "{EF6B3972-B6C9-4625-AEBD-E723BD7E478D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3155556E-2441-44E8-926E-80599A69FA2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3155556E-2441-44E8-926E-80599A69FA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3155556E-2441-44E8-926E-80599A69FA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3155556E-2441-44E8-926E-80599A69FA2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6B3972-B6C9-4625-AEBD-E723BD7E478D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF6B3972-B6C9-4625-AEBD-E723BD7E478D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF6B3972-B6C9-4625-AEBD-E723BD7E478D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF6B3972-B6C9-4625-AEBD-E723BD7E478D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3ACCFA9F-B17F-454D-AF8D-0AF596D90E7E}
+		SolutionGuid = {FB112A09-3F35-4F5E-AFD4-EA01CE283882}
 	EndGlobalSection
 EndGlobal
