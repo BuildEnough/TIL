@@ -9,17 +9,13 @@
     
     <div class="alert-box" id="alert">
         알림창
-        <button onclick="closeAlert()">닫기</button>
+        <button onclick="Alert('none')">닫기</button>
     </div>
-    <button onclick="openAlert()">열기</button>
+    <button onclick="Alert('block')">열기</button>
     
     <script>
-        function openAlert() {
-            document.getElementById('alert').style.display='block';
-        }
-
-        function closeAlert() {
-            document.getElementById('alert').style.display='none';
+        function Alert(alert) {
+            document.getElementById('alert').style.display= alert;
         }
     </script>    
 
