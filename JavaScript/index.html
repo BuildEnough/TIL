@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
+
     <div class="alert-box" id="alert">
-        알림창
-        <button onclick="Alert('none')">닫기</button>
+        <p id="title">알림창임</p>
+        <button onclick="alert('none');">닫기</button>
     </div>
-    <button onclick="Alert('block')">열기</button>
-    
+    <button onclick="alertId('아이디를 입력하세요', 'block');">버튼1</button>
+    <button onclick="alertId('비밀번호를 입력하세요', 'block');">버튼2</button>
+
     <script>
-        function Alert(param) {
-            document.getElementById('alert').style.display= param;
+        function alert(parameter) {
+            document.getElementById('alert').style.display = parameter;
         }
-    </script>    
+
+        function alertId(parameter1, parameter2) {
+            document.getElementById('title').innerHTML = parameter1;
+            document.getElementById('alert').style.display = parameter2;
+        }
+    </script>
 
 </body>
 </html>
