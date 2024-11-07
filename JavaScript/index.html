@@ -8,12 +8,17 @@
 
     <div class="alert-box" id="alert">
         <p id="title">알림창임</p>
-        <button onclick="alert('none');">닫기</button>
+        <button id="close">닫기</button>
     </div>
     <button onclick="alertId('아이디를 입력하세요', 'block');">버튼1</button>
     <button onclick="alertId('비밀번호를 입력하세요', 'block');">버튼2</button>
 
     <script>
+
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+        });
+
         function alert(parameter) {
             document.getElementById('alert').style.display = parameter;
         }
